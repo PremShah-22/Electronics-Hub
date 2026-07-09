@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prem Shah | Ultimate Electronics Engineering Master Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <button class="btn-icon back-btn hidden" id="backToHomeBtn"><i class="fas fa-arrow-left"></i> Home Page</button>
+  <div class="floating-controls">
+    <button class="btn-icon" id="themeToggle"><i class="fas fa-moon"></i> Theme</button>
+  </div>
+
+  <div class="app-container">
+
+    <section class="page active" id="heroPage">
+      <div class="hero-wrapper">
+        <div class="hero-badge">4-Year Engineering Reference Suite</div>
+        <h1 class="hero-title">ELECTRONICS HUB</h1>
+        <p class="hero-subtitle">Comprehensive Electronic Engineering Manual covering Analog Circuits, Digital Logic, Signals & Systems, Microprocessors, Control Systems, VLSI & Verilog HDL.</p>
+        
+        <div class="social-links">
+          <a href="https://github.com/PremShah-22" target="_blank" class="social-btn"><i class="fab fa-github"></i> PremShah-22</a>
+          <a href="https://linkedin.com/in/prem-shah-848054389" target="_blank" class="social-btn"><i class="fab fa-linkedin"></i> prem-shah-848054389</a>
+        </div>
+
+        <button class="cta-enter-btn" id="enterManualBtn">
+          <span>Enter Manual & Definitions</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="page hidden" id="manualPage">
+      <div class="main-layout">
+        
+        <nav class="toc-sidebar">
+          <div class="toc-title">4-Year Curriculum</div>
+          <ul class="toc-list">
+            <li><a href="#fundamentals">0. Core Definitions & Network Theorems</a></li>
+            <li><a href="#unit1-analog">1. Semiconductor Diodes</a></li>
+            <li><a href="#unit2-analog">2. Bipolar Junction Transistor</a></li>
+            <li><a href="#unit3-analog">3. Field Effect Transistor</a></li>
+            <li><a href="#unit4-analog">4. Transistors at High Freq</a></li>
+            <li><a href="#unit5-analog">5. Negative Resistance Devices</a></li>
+            <li><a href="#unit1-digital">6. Boolean Optimisation</a></li>
+            <li><a href="#unit2-digital">7. Combinational Circuits</a></li>
+            <li><a href="#unit3-digital">8. Sequential Circuits</a></li>
+            <li><a href="#unit4-digital">9. Logic Families</a></li>
+            <li><a href="#unit5-digital">10. Verilog HDL Architectures</a></li>
+            <li><a href="#year2-signals">11. Signals, Systems & DSP</a></li>
+            <li><a href="#year3-mcu">12. Microprocessors & MCUs</a></li>
+            <li><a href="#year3-comm">13. Communication Systems</a></li>
+            <li><a href="#year4-vlsi">14. VLSI Design & CMOS Fabrication</a></li>
+          </ul>
+        </nav>
+
+        <div class="content-area">
+
+          <article class="topic-card" id="fundamentals">
+            <div class="topic-header">
+              <span class="unit-badge">Year 1 Basics</span>
+              <h2>Core Definitions & Network Theorems</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Fundamental Circuit Quantities</h3>
+              <p><strong>Electric Charge (Q):</strong> Fundamental property of matter measured in Coulombs ($C$). $1\,\text{C} = 6.24 \times 10^{18}$ electrons.</p>
+              <p><strong>Current (I):</strong> Time rate of flow of electric charge: $I = \frac{dQ}{dt}$ (Amperes).</p>
+              <p><strong>Voltage (V):</strong> Energy required to move a unit positive charge between two nodes: $V = \frac{dW}{dQ}$ (Volts).</p>
+              <p><strong>Power (P) & Energy (W):</strong> $P = V \cdot I = \frac{dW}{dt}$ (Watts). $W = \int P \, dt$ (Joules).</p>
+
+              <h3 class="subtopic-title">Independent vs. Dependent Sources</h3>
+              <ul>
+                <li><strong>Independent Voltage/Current Source:</strong> Delivers terminal voltage or current completely independent of external network variables.</li>
+                <li><strong>Dependent (Controlled) Sources:</strong> Output value is governed by a voltage or current elsewhere in the circuit (VCVS, VCCS, CCVS, CCCS).</li>
+              </ul>
+
+              <h3 class="subtopic-title">Core Network Theorems</h3>
+              <p><strong>Thevenin's Theorem:</strong> Any linear two-terminal bilateral network can be replaced by an equivalent circuit consisting of an open-circuit voltage $V_{th}$ in series with an equivalent resistance $R_{th}$.</p>
+              <p><strong>Norton's Theorem:</strong> Dual of Thevenin's theorem; replaces a linear network with a short-circuit current source $I_n$ in parallel with $R_n$ ($R_n = R_{th}$).</p>
+              <p><strong>Maximum Power Transfer Theorem:</strong> Maximum power is transferred from source to load when load resistance equals internal source resistance ($R_L = R_{s}$ for DC, or $Z_L = Z_s^*$ for AC).</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit1-analog">
+            <div class="topic-header">
+              <span class="unit-badge">Analog Unit I</span>
+              <h2>Semiconductor Diodes & Wave Shaping</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Volt-Ampere (V-I) Characteristics & Shockley Equation</h3>
+              <p>Current flow through a PN junction diode under forward or reverse bias is governed by Shockley's equation:</p>
+              <div class="formula-card">I = I_s * ( exp( V / (n * V_T) ) - 1 )</div>
+              <p>Where $I_s$ is reverse saturation current, $n$ is ideality factor (1 for Ge, 2 for Si), and $V_T = \frac{k \cdot T}{q} \approx 26\text{mV}$ at $300\text{K}$.</p>
+
+              <h3 class="subtopic-title">Temperature Effects</h3>
+              <ul>
+                <li><strong>Reverse Saturation Current ($I_s$):</strong> Doubles for every 10°C temperature rise due to thermal carrier generation.</li>
+                <li><strong>Knee Voltage ($V_\gamma$):</strong> Drops by approximately $-2.5\text{mV/°C}$.</li>
+              </ul>
+
+              <h3 class="subtopic-title">Transition ($C_T$) vs. Diffusion ($C_D$) Capacitance</h3>
+              <p><strong>Transition Capacitance ($C_T$):</strong> Dominates in reverse bias due to the charge separation in the depletion layer acting like a parallel plate capacitor ($C_T = \frac{\varepsilon \cdot A}{W}$).</p>
+              <p><strong>Diffusion Capacitance ($C_D$):</strong> Dominates in forward bias due to stored minority carriers injected across the junction.</p>
+
+              <h3 class="subtopic-title">Clippers & Clampers</h3>
+              <p><strong>Clippers:</strong> Slices off voltage levels above or below selected reference points without altering the remaining signal shape.</p>
+              <p><strong>Clampers:</strong> Adds a DC bias level to an AC waveform while keeping peak-to-peak amplitude constant.</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit2-analog">
+            <div class="topic-header">
+              <span class="unit-badge">Analog Unit II</span>
+              <h2>Bipolar Junction Transistor (BJT)</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">BJT Biasing & Thermal Stability</h3>
+              <div class="formula-card">I_E = I_B + I_C  |  I_C = β * I_B + (1 + β) * I_CBO</div>
+              <p><strong>Thermal Runaway:</strong> Self-heating raises $I_C$, elevating power dissipation ($P_D = V_{CE} \cdot I_C$), which increases junction temperature further in a destructive feedback loop.</p>
+              <p><strong>Stability Factor ($S$):</strong> Quantifies sensitivity of $I_C$ to $I_{CBO}$: $S = \frac{\partial I_C}{\partial I_{CBO}}$. Minimal $S$ values are achieved using voltage-divider bias with emitter degeneration ($R_E$).</p>
+
+              <h3 class="subtopic-title">h-Parameters & Miller's Theorem</h3>
+              <div class="formula-card">v_1 = h_i * i_1 + h_r * v_2  |  i_2 = h_f * i_1 + h_o * v_2</div>
+              <p><strong>Miller's Theorem:</strong> Converts feedback impedance $Z$ between input and output nodes into parallel equivalents: $Z_{in} = \frac{Z}{1 - A_v}$, $Z_{out} = \frac{Z}{1 - 1/A_v}$.</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit3-analog">
+            <div class="topic-header">
+              <span class="unit-badge">Analog Unit III</span>
+              <h2>Field Effect Transistors (FET)</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">JFET & MOSFET Dynamics</h3>
+              <div class="formula-card">Shockley Equation (JFET): I_D = I_DSS * ( 1 - V_GS / V_P )²</div>
+              <p><strong>MOSFETs:</strong> Divided into Enhancement (EMOSFET) and Depletion (DMOSFET) types. They offer high input impedance ($10^{12}\,\Omega$) due to the insulated silicon dioxide ($\text{SiO}_2$) gate barrier.</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit4-analog">
+            <div class="topic-header">
+              <span class="unit-badge">Analog Unit IV</span>
+              <h2>High-Frequency Transistor Analysis</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Hybrid-π Model & Unity Gain Bandwidth</h3>
+              <p>At high frequencies, internal parasitic junction capacitances ($C_{b'e}, C_{b'c}$) degrade gain.</p>
+              <div class="formula-card">Unity-Gain Frequency (f_T): f_T = g_m / ( 2 * π * (C_b'e + C_b'c) )</div>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit5-analog">
+            <div class="topic-header">
+              <span class="unit-badge">Analog Unit V</span>
+              <h2>Negative Resistance Devices</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Tunnel Diode & UJT Mechanics</h3>
+              <p><strong>Tunnel Diode:</strong> Ultra-heavily doped junction exhibiting quantum tunneling and negative differential resistance ($\frac{dV}{dI} < 0$).</p>
+              <p><strong>Unijunction Transistor (UJT):</strong> Characterized by intrinsic standoff ratio $\eta = \frac{R_{B1}}{R_{B1} + R_{B2}}$. Used in relaxation oscillators and SCR triggering.</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit1-digital">
+            <div class="topic-header">
+              <span class="unit-badge">Digital Unit I</span>
+              <h2>Boolean Optimisation</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">K-Maps & Don't Care Conditions</h3>
+              <p><strong>Karnaugh Maps:</strong> Visual grouping method arranged in Gray code order to minimize Sum-of-Products (SOP) and Product-of-Sums (POS) Boolean functions.</p>
+              <p><strong>Don't Care Terms (X):</strong> Invalid or unused input states leveraged during K-map grouping to maximize logic minimization.</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit2-digital">
+            <div class="topic-header">
+              <span class="unit-badge">Digital Unit II</span>
+              <h2>Combinational Logic Circuits</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Adders, Multiplexers & PLDs</h3>
+              <p><strong>Memoryless Circuits:</strong> Outputs depend solely on present inputs.</p>
+              <ul>
+                <li><strong>Adders:</strong> Half Adder, Full Adder, Carry Lookahead Adder (reduces propagation delay).</li>
+                <li><strong>Data Routing:</strong> Multiplexers (Data Selectors) and Demultiplexers.</li>
+                <li><strong>Programmable Logic:</strong> PLA (Programmable AND / Programmable OR) vs. PAL (Programmable AND / Fixed OR).</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit3-digital">
+            <div class="topic-header">
+              <span class="unit-badge">Digital Unit III</span>
+              <h2>Sequential Logic Circuits</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Flip-Flops, Registers & Counters</h3>
+              <p><strong>Flip-Flops:</strong> SR, D, JK, T. Race-around condition in JK ($J=K=1$ when pulse width $t_p > \Delta t$) is solved via Master-Slave or Edge Triggering.</p>
+              <p><strong>Counters:</strong> Asynchronous (Ripple) vs. Synchronous (common clock source).</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit4-digital">
+            <div class="topic-header">
+              <span class="unit-badge">Digital Unit IV</span>
+              <h2>Digital Logic Families</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">TTL vs. CMOS Parameters</h3>
+              <ul>
+                <li><strong>Noise Margin:</strong> $NM_H = V_{OH(min)} - V_{IH(min)}$, $NM_L = V_{IL(max)} - V_{OL(max)}$.</li>
+                <li><strong>TTL vs. CMOS:</strong> TTL is fast with high current drive; CMOS provides ultra-low static power draw and higher integration density.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="topic-card" id="unit5-digital">
+            <div class="topic-header">
+              <span class="unit-badge">Digital Unit V</span>
+              <h2>Verilog HDL Architecture</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Abstraction Levels in Verilog</h3>
+              <ul>
+                <li><strong>Gate-Level:</strong> Direct instantiation of hardware logic gates (`and`, `or`, `nand`).</li>
+                <li><strong>Dataflow:</strong> Functional modeling using continuous assignment statements (`assign out = a & b;`).</li>
+                <li><strong>Behavioral:</strong> Algorithmic modeling inside procedural blocks (`always @(posedge clk)`).</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="topic-card" id="year2-signals">
+            <div class="topic-header">
+              <span class="unit-badge">Year 2 & 3 Track</span>
+              <h2>Signals, Systems & DSP</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Signal Classification & Transformations</h3>
+              <p><strong>Nyquist-Shannon Sampling Theorem:</strong> To prevent aliasing, a continuous signal must be sampled at a rate $f_s \ge 2 \cdot f_{max}$.</p>
+              <div class="formula-card">Continuous Fourier Transform: X(f) = ∫ x(t) * e^(-j * 2π * f * t) dt</div>
+              <p><strong>Z-Transform:</strong> Discrete-time counterpart of Laplace Transform used for digital filter design (IIR & FIR filters).</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="year3-mcu">
+            <div class="topic-header">
+              <span class="unit-badge">Year 3 Track</span>
+              <h2>Microprocessors & Embedded Systems</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">8085 / 8086 & ARM Architecture</h3>
+              <p><strong>8085 Architecture:</strong> 8-bit accumulator-based MPU with 16-bit address bus ($64\,\text{KB}$ memory access space).</p>
+              <p><strong>RISC vs. CISC:</strong> Reduced Instruction Set Computing (ARM) utilizes pipelining and single-cycle execution vs. Complex Instruction Set Computing (x86).</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="year3-comm">
+            <div class="topic-header">
+              <span class="unit-badge">Year 3 Track</span>
+              <h2>Communication Engineering</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">Analog & Digital Modulation Scheme</h3>
+              <p><strong>Analog Modulation:</strong> Amplitude Modulation (AM), Frequency Modulation (FM), and Phase Modulation (PM).</p>
+              <p><strong>Digital Modulation:</strong> ASK, FSK, PSK, and Quadrature Amplitude Modulation (QAM) for high-bandwidth spectral efficiency.</p>
+            </div>
+          </article>
+
+          <article class="topic-card" id="year4-vlsi">
+            <div class="topic-header">
+              <span class="unit-badge">Year 4 Advanced</span>
+              <h2>VLSI Design & Semiconductor Fabrication</h2>
+            </div>
+            <div class="topic-body">
+              <h3 class="subtopic-title">CMOS Inverter Dynamics & Fabrication Steps</h3>
+              <p><strong>CMOS Inverter:</strong> Consists of a PMOS pull-up network and an NMOS pull-down network. Exhibits near-zero static power dissipation.</p>
+              <p><strong>Photolithography:</strong> Process of transferring geometric circuit shapes onto silicon wafers using UV light exposure, photoresist polymers, and chemical etching.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <footer>
+        <p>&copy; 2026 <strong>PREM SHAH</strong>. All Rights Reserved.</p>
+      </footer>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
