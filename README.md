@@ -7,6 +7,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)
 ![GitHub Pages](https://img.shields.io/badge/Hosted-GitHub%20Pages-black?style=for-the-badge&logo=github)
 
+[🚀Live Demo](https://premshah-22.github.io/Electronics-Hub/)
+
 ---
 
 ## 📖 About
