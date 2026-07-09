@@ -262,7 +262,7 @@ Contributions are welcome.
 
 **Prem Shah**
 
-First Year Electronics & Communication Engineering Student
+Second Year Electronics & Communication Engineering Student
 
 Nirma University
 
